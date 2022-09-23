@@ -30,7 +30,7 @@ export const twitSlice = createSlice({
       });
       console.log("tweeter", tweeter);
       console.log("state.twits", state.twits);
-      obj = tweeter;
+      state.obj = tweeter;
     },
   },
 });

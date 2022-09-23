@@ -13,8 +13,9 @@ const Dene = () => {
     setOf(xy);
     // console.log("xy", xy);
   };
+  const kisi = useSelector((state) => state.twit.obj);
 
-  console.log("of", of);
+  console.log("of", kisi);
 
   return (
     <div>
