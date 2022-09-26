@@ -9,6 +9,7 @@ export const twitSlice = createSlice({
     twits: [{ id: 1, name: "asd", mail: "qwe", twit: "aaaxxx" }],
     caption: "",
     obj: {},
+    loading: null,
   },
   reducers: {
     createTwit: (state, action) => {
@@ -19,6 +20,7 @@ export const twitSlice = createSlice({
     },
     addTwit: (state, action) => {
       state.twits.push(action.payload);
+      state.loading = true;
     },
     makeCaption: (state, action) => {
       state.caption = action.payload.caption;
@@ -32,10 +34,13 @@ export const twitSlice = createSlice({
       console.log("state.twits", state.twits);
       state.obj = tweeter;
     },
+    removeLoading: (state) => {
+      state.loading = false;
+    },
   },
 });
 
-export const { createTwit, addTwit, makeCaption, findPerson } =
+export const { createTwit, addTwit, makeCaption, findPerson, removeLoading } =
   twitSlice.actions;
 
 export default twitSlice.reducer;

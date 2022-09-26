@@ -38,6 +38,7 @@ const Twit = () => {
         name: twt.name,
         twit: twt.twit,
         random: twt.random,
+        mail: twt.mail,
       })
     );
     dispatch(makeCaption({ caption: twt.caption }));
@@ -47,7 +48,7 @@ const Twit = () => {
     () => <Caption person={person} />;
   }, [person]);
 
-  console.log(open)
+  console.log(open);
   return (
     <div>
       <form onSubmit={handleSubmit}>
