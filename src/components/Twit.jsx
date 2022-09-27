@@ -25,6 +25,10 @@ const Twit = () => {
   const twtArray = useSelector((state) => state.twit.twits);
   console.log("twtArray", twtArray);
 
+  const loading = useSelector((state) => state.twit.loading);
+
+  console.log("tvt loading", loading);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setTwt({ ...twt, [name]: value });
@@ -89,7 +93,7 @@ const Twit = () => {
 
       <br></br>
       {open === false ? (
-        <button onClick={() => setOpen(!open)}>
+        <button disabled={loading} onClick={() => setOpen(!open)}>
           {twtArray.length} adet tivit{" "}
         </button>
       ) : (
